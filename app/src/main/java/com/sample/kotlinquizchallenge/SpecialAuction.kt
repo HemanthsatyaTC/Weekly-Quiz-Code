@@ -16,5 +16,20 @@ package com.sample.kotlinquizchallenge
 * */
 
 fun main() {
+    println(placeBid(50))
+    println(placeBid(30))
+    println(placeBid(75))
 
+}
+
+
+var currentBid: Int? = null
+
+fun placeBid(bid: Int): Int? {
+    return if (currentBid == null || bid > currentBid!!) {
+        currentBid = bid
+        currentBid
+    } else {
+        null
+    }
 }

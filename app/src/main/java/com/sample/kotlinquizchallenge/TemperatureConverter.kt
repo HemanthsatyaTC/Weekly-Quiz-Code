@@ -14,4 +14,14 @@ package com.sample.kotlinquizchallenge
 
 fun main() {
 
+    println(convertTemperature(25.0, celsiusToFahrenheit))
+    println(convertTemperature(98.6, fahrenheitToCelsius))
+
 }
+
+fun convertTemperature(value: Double, converter: (Double) -> Double): Double {
+    return converter(value)
+}
+
+val celsiusToFahrenheit: (Double) -> Double = { c -> (c * 9 / 5) + 32 }
+val fahrenheitToCelsius: (Double) -> Double = { f -> (f - 32) * 5 / 9 }

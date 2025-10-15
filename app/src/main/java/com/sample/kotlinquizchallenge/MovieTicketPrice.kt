@@ -16,6 +16,16 @@ package com.sample.kotlinquizchallenge
 *
 * */
 
-fun main() {
+fun calculateTicketPrice(age: Int, isMatinee: Boolean): Int {
+    return when {
+        age < 13 -> if (isMatinee) 6 else 8      // Child
+        age >= 65 -> if (isMatinee) 8 else 10     // Senior
+        else -> if (isMatinee) 12 else 15         // Adult
+    }
+}
 
+fun main() {
+    println(calculateTicketPrice(25, false))
+    println(calculateTicketPrice(65, true))
+    println(calculateTicketPrice(8, false))
 }

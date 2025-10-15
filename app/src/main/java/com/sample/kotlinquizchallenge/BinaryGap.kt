@@ -16,4 +16,22 @@ package com.sample.kotlinquizchallenge
 
 fun main() {
 
+    println(longestZeroes(9))
+    println(longestZeroes(529))
+    println(longestZeroes(32))
+
+}
+
+fun longestZeroes(n: Int): Int{
+    val binary = Integer.toBinaryString(n)
+    val parts = binary.trim('0').split('1')
+    var maxGap = 0
+
+    for (part in parts) {
+        if (part.isNotEmpty()) {
+            maxGap = maxOf(maxGap, part.length)
+        }
+    }
+
+    return maxGap
 }
